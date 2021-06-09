@@ -1,5 +1,6 @@
-import Lexer      from './Lexer';
-import LexerError from './LexerError';
+import Lexer  from './Lexer';
+import Parser from './Parser';
+import util from 'util'
 
 
 const code = `
@@ -16,18 +17,17 @@ void loop {
 // )
 
 const lexer = new Lexer(code);
+const parser = new Parser(lexer)
+
 
 try {
-    for (let token of lexer.getTokens()) {
-        const text = JSON.stringify(token.text).slice(1, -1)
-        console.log(`${token.type.name}:${token.pos.line}:${token.pos.symbol} '${text}'`)
-    }
+    const rootNode = parser.buildTree()
+    console.log(util.inspect(rootNode, {
+        colors: true,
+        depth: 100
+    }))
 } catch (e) {
-    if (e instanceof LexerError) {
-        console.log(`${e.name}:${e.pos.line}:${e.pos.symbol}: ${e.message}`)
-    } else {
-        console.log(e)
-    }
+    console.log(e)//.toString())
     process.exit(1)
 }
 
