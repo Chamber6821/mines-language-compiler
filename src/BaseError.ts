@@ -1,13 +1,13 @@
-export default class CompileError extends Error {
+export default class BaseError extends Error {
 
     readonly pos = { line: 0, symbol: 0 }
 
     constructor(message: string, pos?: { line: number, symbol: number }) {
         super(message)
-        this.name = 'CompileError'
+        this.name = 'BaseError'
         pos && (this.pos = pos)
 
-        Object.setPrototypeOf(this, CompileError.prototype)
+        Object.setPrototypeOf(this, BaseError.prototype)
     }
 
     toString(): string {

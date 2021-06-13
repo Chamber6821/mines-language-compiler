@@ -1,8 +1,7 @@
-import Lexer       from './Lexer';
-import TokenType   from './TokenType';
-import Token       from './Token';
+import Lexer       from '../lexer/Lexer';
+import TokenType   from '../lexer/TokenType';
+import Token       from '../lexer/Token';
 import ParserError from './ParserError';
-import { type }    from 'os';
 
 
 export default class TokenProvider {
@@ -57,7 +56,8 @@ export default class TokenProvider {
     }
 
     skip(...types: TokenType[]) {
-        while (this.match(...types)) {}
+        while (this.match(...types)) {
+        }
     }
 
     private primaryMatch(...expected: TokenType[]): Token | null {

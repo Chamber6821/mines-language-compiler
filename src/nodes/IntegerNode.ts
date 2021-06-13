@@ -1,5 +1,5 @@
 import ExpressionNode from './ExpressionNode';
-import Token          from '../Token';
+import Token          from '../lexer/Token';
 
 
 export default class IntegerNode extends ExpressionNode {

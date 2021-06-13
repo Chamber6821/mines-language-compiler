@@ -1,13 +1,13 @@
-import Lexer           from './Lexer';
+import Lexer           from '../lexer/Lexer';
 import TokenProvider   from './TokenProvider';
-import ExpressionNode  from './nodes/ExpressionNode';
-import ConstantNode    from './nodes/ConstantNode';
-import IntegerNode     from './nodes/IntegerNode';
-import BinOperatorNode from './nodes/BinOperatorNode';
-import ProcedureNode   from './nodes/ProcedureNode';
-import CodeBlockNode   from './nodes/CodeBlockNode';
-import ParenthesesNode from './nodes/ParenthesesNode';
-import TokenType       from './TokenType';
+import ExpressionNode  from '../nodes/ExpressionNode';
+import ConstantNode    from '../nodes/ConstantNode';
+import IntegerNode     from '../nodes/IntegerNode';
+import BinOperatorNode from '../nodes/BinOperatorNode';
+import ProcedureNode   from '../nodes/ProcedureNode';
+import CodeBlockNode   from '../nodes/CodeBlockNode';
+import ParenthesesNode from '../nodes/ParenthesesNode';
+import TokenType       from '../lexer/TokenType';
 
 
 type TokenTypes = typeof Lexer.prototype.tokenTypes

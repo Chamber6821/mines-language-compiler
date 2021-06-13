@@ -1,7 +1,7 @@
-import CompileError from './CompileError';
+import BaseError from '../BaseError';
 
 
-export default class ParserError extends CompileError {
+export default class ParserError extends BaseError {
 
     constructor(message: string, pos: { line: number, symbol: number }) {
         super(message, pos)

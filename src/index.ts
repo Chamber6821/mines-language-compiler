@@ -1,6 +1,6 @@
-import Lexer  from './Lexer';
-import Parser from './Parser';
-import util from 'util'
+import Lexer  from './lexer/Lexer';
+import Parser from './parser/Parser';
+import util   from 'util'
 
 const code = `
 void loop {
@@ -23,7 +23,7 @@ try {
     const rootNode = parser.buildTree()
     console.log(util.inspect(rootNode, {
         colors: true,
-        depth: 100
+        depth:  100
     }))
 } catch (e) {
     console.log(e)//.toString())
